@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Pacifico&family=Protest+Strike&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+:root{
+    --main-text-font:"Open Sans", sans-serif;
+    --logo-text-font:"Protest Strike", sans-serif;
+    --main-color: #29ffc6;
+}
+
+* {
+    margin: 0;                  
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header {
+    background-image: url("./anh/muctieu.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.bg-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.6;
+}
+
+.top {
+    background-color: #329983;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    border: 2px solid #dddddd;
+}
+
+.header-top{
+    /* display: flex; */
+    justify-content:space-between;
+    padding: 12px 0;
+    align-items: center;
+}
+
+.header-top p {
+    font-family: var(--logo-text-font);
+    font-size: 25px;
+    letter-spacing: 2px;
+    color: white;
+    border-radius: 5px;
+}
+
+.header-top p span {
+    font-size: 20px;
+}
+
+.header-top ul {
+    display: flex;
+    margin-left:  500px;;
+}
+
+.header-top ul li {
+    margin-left: 12px;
+    position: relative;
+}
+
+.header-top ul li::after {
+    position: absolute;
+    content: "";
+    display: block;
+    bottom: -2px;
+    height: 4px;
+    width: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--main-color);
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+.header-top ul li:hover::after {
+    width: 100%;
+}
+
+.header-top ul li a {
+    font-family: var(--main-text-font);
+    color: white;
+}
+
+.header-top ul i {
+    font-size: 32px;
+    color: white;
+    margin: 12px 0 0 12px;
+    cursor: pointer;
+    margin-bottom: 150px;
+    display: none;
+}
+
+.header-top > i {
+    font-size: 32px;
+    color: var(--main-color);
+    cursor: pointer;
+    display: none;
+    float: right;
+}
+
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 700px;
+    min-width: 300px;
+    text-align: center;
+}
+
+.header-text h1 {
+    font-family: var(--main-text-font);
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.header-text p {
+    color: white;
+    font-family: var(--main-text-font);
+}
+
+.header-text a.button {
+    display: inline-block; 
+    width: 150px; 
+    height: 40px; 
+    margin-top: 20px; 
+    background-color: transparent; 
+    border: 2px solid var(--main-color); 
+    color: white;
+    cursor: pointer; 
+    font-size: 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    transition: background-color 0.5s ease; 
+}
+
+.header-text a.button:hover {
+    background-color: var(--main-color); /* Màu nền khi hover */
+}
+
+/* ---------mobi--------- */
+@media (max-width: 575px) {
+    .header-top ul {
+        position: fixed;
+        width: 200px;
+        height: 100vh;
+        background-color: #329983;
+        right: 0;
+        top: 0;
+        flex-direction: column;
+        transform: translateX(100%);
+        opacity: 0;
+        transition: transform 0.5s ease;  
+    }
+
+     .header-top ul li {
+        margin-bottom: 20px;
+        margin-left: 50px;
+    }
+ 
+    .header-top > i{
+        display: block;
+        margin-left: 300px;
+    }
+    .header-top ul > i {
+        display: block;
+    }
+
+    .header-top {
+        padding: 0 12px;
+    } 
+
+    
+    /* .header-top ul.active {
+        transform: translateX(0);
+        opacity: 1;
+    } */
+    .brand-item,.course-item,.Evaluate-item,.facilities-item{
+        width: 100%!important;
+        margin-bottom: 20px;
+    }
+}
+/* -------------course---------------- */
+.course{
+    padding: 50px 0 ;
+
+}
+.course h1{
+    font-family: var(--main-text-font);
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333333;
+}
+.course-items{
+    justify-content: space-between;
+}
+.course-item{
+    width: 30%;
+    text-align: center;
+    background-color: #329983;
+    padding: 20px 30px ;
+    border-radius:5px ;
+    transition: all 0.5s ease;
+}
+.course-item:hover{
+    box-shadow: 10px 10px 5px 5px #dddddd;
+}
+.course-item h2{
+    font-family: var(--main-text-font);
+    margin-bottom: 12px;
+    color: #333333;
+}
+.course-item p{
+    font-family: var(--main-text-font);
+    color: #333333;
+}
+/* -------------brand---------------- */
+.brand {
+    padding: 50px 0;
+}
+.brand h1 {
+    font-family: var(--main-text-font);
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333333;
+}
+.brand-items {
+    justify-content: space-between;
+}
+.brand-item {
+    width: 30%;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    position: relative;
+}
+.brand-item::before {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #329983;
+    position: absolute;
+    opacity: 0;
+}
+.brand-item:hover::before {
+    opacity: 0.5;
+}
+.brand-item:hover h2 {
+    opacity: 1;
+}
+.brand-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.brand-item h2 {
+    font-family: var(--main-text-font);
+    color: #333333;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.5s ease;
+    text-align: center; /* Center the text */
+}
+
+/* -------------facilities---------------- */
+.facilities {
+    padding: 50px 0;
+}
+.facilities h1 {
+    font-family: var(--main-text-font);
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333333;
+}
+.facilities-items {
+    justify-content: space-between;
+}
+.facilities-item {
+    width: 30%;
+    border-radius: 5px;
+}
+.facilities-item h2 {
+    font-family: var(--main-text-font);
+    color: #333333;
+    margin: 15px 0 6px 0;
+}
+.facilities-item img:hover {
+    transform: scale(1.04);
+}
+.facilities-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+/* -------------Evaluate---------------- */
+.Evaluate {
+    padding: 50px 0;
+}
+.Evaluate> h1 {
+    font-family: var(--main-text-font);
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333333;
+}
+.Evaluate-items {
+    justify-content: space-between;
+}
+.Evaluate-item {
+    width: 30%;
+    background-color:#329983 ;
+    padding: 50px 6px;
+}
+.Evaluate-text h1 {
+    font-family: var(--main-text-font);
+    color: #333333;
+    font-size: 18px;
+    margin: 12px 0 6px;
+    font-weight: bold;
+}
+.Evaluate-item i{
+    color: gold;
+}
+.Evaluate-item:hover img{
+    border: 5px solid var(--main-color);
+}
+.Evaluate-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.Evaluate-text {
+    width: 70%;
+    padding-left: 30px;
+}
+.Evaluate-text p{
+    font-family: var(--main-text-font);
+    color: #333333;
+    font-size: 16px;
+}
+/* ------------------contact--------------- */
+.contact{
+    background-image: url(/laptrinh/du_an_rieng/anh/lienhe.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 100px 0;
+
+}
+.contact p{
+    color: white;
+    font-size: 22px;
+    font-family: var(--main-text-font);
+}
+.contact button{
+    height: 40px;
+    width: 150px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color:var(--main-color);
+    color: white;
+    font-family: var(--main-text-font);
+    transition: all 0.5s ease;
+    font-weight: bold;
+    font-size: 18px;
+}
+.contact button:hover{
+    background: transparent;
+    border: 2px solid var(--main-color);
+}
+/* ----------footer------------ */
+.footer{
+    padding: 50px 0 6px;
+    text-align: center;
+}
+.footer h1{
+    font-family: var(--main-text-font);
+    color: #333333;
+    margin-bottom: 30px;
+
+}
+.footer p{
+    font-family: var(--main-text-font);
+    color: #333333;   
+}
+.footer i{
+    margin-top: 12px;
+    color: var(--main-color);
+    font-size: 22px;
+    cursor: pointer;
+}
