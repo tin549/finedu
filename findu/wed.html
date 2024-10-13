@@ -11,18 +11,21 @@
 </head>
 <body>
     <header>
-        <div class="top">                           
+        <div class="top" >                           
             <div class="container">            
-                <div class="header-top row">
-                    <p>Fine<span>DU</span></p>
-                     
+                <div class="header-top row" >
+                    <div class="logo-container">
+                        <img src="./anh/logo.png" alt="" class="logo">
+                        <p>FinEdu</p>
+                    </div>
+                                       
                     <ul>       
                         <i class="fa-solid fa-xmark"></i>
                         <li><a href="">Trang chủ</a></li>
-                        <li><a href="">Giới thiệu</a></li>
+                        <li><a href="#khoa_hoc">Giới thiệu</a></li>
                         <li><a href="./khoaHoc.html">Khóa học</a></li>
                         <li><a href="">Blog</a></li>
-                        <li><a href="">Liên hệ</a></li>
+                        <li><a href="#lien_he">Liên hệ</a></li>
                     </ul>
                     <i class="fas fa-bars"></i> 
                 </div>
@@ -32,13 +35,15 @@
         <div class="header-text">
             <h1>Đổi Mới Sáng Tạo Và Khởi Nghiệp</h1>
             <p>hãy đến với chúng tôi để trải nghiệm một nền giáo dục hàng đầu thế giới</p>
-            <a href="./dangKi.html" class="button">Đăng Kí</a>
-            <a href="./dangNhap.html" class="button">Đăng Nhập</a>
+            <span id="user-name"></span>
+            <a href="./dangKi.html" class="button" id="register-btn">Đăng Kí</a>
+            <a href="./dangNhap.html" class="button" id="login-btn">Đăng Nhập</a>
+            <a href="#" id="logout-btn" >Đăng Xuất</a>
         </div>
         
     </header>
     <!-- course -->
-    <section class="course">
+    <section class="course" id="khoa_hoc">
         <h1>Những Khóa Học Cho Bạn</h1>
         <div class="course-items container row">
             <div class="course-item">
@@ -78,18 +83,18 @@
         <h1>Cơ Sở Vật Chất</h1>
         <div class="facilities-items container row">
             <div class="facilities-item">
-                <img src="/laptrinh/du_an_rieng/anh/uth.jpg" alt="anh10">
+                <img src="./anh/phong_hoc.jpg" alt="anh10">
                 <h2>UTH</h2>
                 <p>Phòng học của chúng tôi được trang bị những thiết bị hiện đại</p>
             </div>
             <div class="facilities-item">
-                <img src="/laptrinh/du_an_rieng/anh/hub.jpg" alt="anh11">
+                <img src="./anh/cantin.jpg" alt="anh11">
                 <h2>HUB</h2>
                 <p>Chuyên phục vụ các món ăn tự chọn đảm bảo an toàn vệ sinh thực phẩm</p>
                 
             </div>
             <div class="facilities-item">
-                <img src="/laptrinh/du_an_rieng/anh/ute.jpg" alt="anh9">
+                <img src="./anh/thuvien.jpg" alt="anh9">
                 <h2>UTE</h2>
                 <p>có tất cả các đầu sách hay trên thế giới</p>
             </div>
@@ -100,7 +105,7 @@
         <h1>Đánh giá</h1>
         <div class="Evaluate-items container row">
             <div class="Evaluate-item row">
-                <img src="/laptrinh/du_an_rieng/anh/uth.jpg" alt="anh10">
+                <img src="./anh/tin.jpg" alt="anh10">
                 <div class="Evaluate-text">
                     <p>khóa học tuyệt vời và bổ ích, cần kéo ae vào học chung tốn tiền chơi</p>
                     <h1>Nguyễn Ngọc Tín</h1>
@@ -112,7 +117,7 @@
                 </div>
             </div>
             <div class="Evaluate-item row">
-                <img src="/laptrinh/du_an_rieng/anh/hub.jpg" alt="anh10">
+                <img src="./anh/trang.jpg" alt="anh10">
                 <div class="Evaluate-text">
                     <p>phòng học hại điện, cần sửa chữa và trao dồi thêm từ các cơ sở khác </p>
                     <h1>Nguyễn Thị Hiền Trang</h1>
@@ -121,7 +126,7 @@
                 </div>
             </div>
             <div class="Evaluate-item row">
-                <img src="/laptrinh/du_an_rieng/anh/ute.jpg" alt="anh10">
+                <img src="./anh/anh.jpg" alt="anh10">
                 <div class="Evaluate-text">
                     <p>Ngon bổ rẻ như 18, tôi sẽ cố gắng rủ ngiu cũ vào học chung</p>
                     <h1>LeAng</h1>
@@ -135,7 +140,7 @@
         </div>
     </section>
     <!-- ------------contact---------- -->
-    <section class="contact">
+    <section class="contact" id="lien_he">
         <p>Hãy Nhanh Liên Hệ Với Chúng Tôi Để Được Hưởng Ưu Đãi Tốt Nhất</p>
         <button>Liên Hệ</button>
     </section>

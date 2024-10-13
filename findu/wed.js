@@ -17,8 +17,35 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector(".header-top ul").style.opacity = "0";
         });
     }
-});
 
+    // ----------------Trang Chủ - Hiển thị người dùng----------------
+    // Lấy thông tin người dùng từ localStorage
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    const userNameElement = document.getElementById('user-name');
+    const registerBtn = document.getElementById('register-btn');
+    const loginBtn = document.getElementById('login-btn');
+    const logoutBtn = document.getElementById('logout-btn');
+
+    // Kiểm tra nếu người dùng đã đăng nhập
+    if (user) {
+        // Hiển thị tên người dùng và ẩn các nút đăng ký/đăng nhập
+        userNameElement.textContent = `Xin chào, ${user.fullname}`;
+        userNameElement.style.display = 'inline-block';  // Hiển thị tên người dùng
+        registerBtn.style.display = 'none';  // Ẩn nút đăng ký
+        loginBtn.style.display = 'none';  // Ẩn nút đăng nhập
+        logoutBtn.style.display = 'inline-block';  // Hiển thị nút đăng xuất
+    }
+
+    // Xử lý sự kiện khi nhấn nút Đăng Xuất
+    logoutBtn.addEventListener('click', function() {
+        // Xóa thông tin người dùng khỏi localStorage
+        localStorage.removeItem('user');
+
+        // Tải lại trang để trở về trạng thái chưa đăng nhập
+        window.location.reload();
+    });
+});
 
 // ----------------dangKi--------------------------
 document.addEventListener('DOMContentLoaded', () => {
@@ -83,32 +110,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
 // ----------khóa học---------------------
-        // Lấy danh sách video và video chính
-        let listVideos = document.querySelectorAll('.video-list .vid'); // Sửa ở đây để lấy tất cả các phần tử .vid
-        let mainVideo = document.querySelector('.main-video video');
-        let title = document.querySelector('.main-video .title');
+let listVideos = document.querySelectorAll('.video-list .vid'); // Sửa ở đây để lấy tất cả các phần tử .vid
+let mainVideo = document.querySelector('.main-video video');
+let title = document.querySelector('.main-video .title');
 
-        listVideos.forEach(video => {
-            video.onclick = () => {
-                // Xóa lớp active từ tất cả video
-                listVideos.forEach(vid => vid.classList.remove('active'));
-                
-                // Thêm lớp active cho video được nhấp
-                video.classList.add('active');
+listVideos.forEach(video => {
+    video.onclick = () => {
+        // Xóa lớp active từ tất cả video
+        listVideos.forEach(vid => vid.classList.remove('active'));
+        
+        // Thêm lớp active cho video được nhấp
+        video.classList.add('active');
 
-                // Nếu video được nhấp có lớp active, cập nhật video chính
-                if (video.classList.contains('active')) {
-                    let src = video.children[0].getAttribute('src');
-                    mainVideo.src = src;
+        // Nếu video được nhấp có lớp active, cập nhật video chính
+        if (video.classList.contains('active')) {
+            let src = video.children[0].getAttribute('src');
+            mainVideo.src = src;
 
-                    let text = video.children[1].innerHTML;
-                    title.innerHTML = text;
+            let text = video.children[1].innerHTML;
+            title.innerHTML = text;
 
-                    // Tự động phát video chính khi chọn
-                    mainVideo.play();
-                }
-            };
-        });
-
+            // Tự động phát video chính khi chọn
+            mainVideo.play();
+        }
+    };
+});

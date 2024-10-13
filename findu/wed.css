@@ -5,7 +5,9 @@
     --logo-text-font:"Protest Strike", sans-serif;
     --main-color: #29ffc6;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 * {
     margin: 0;                  
     padding: 0;
@@ -64,22 +66,29 @@ header {
     padding: 12px 0;
     align-items: center;
 }
-
+.logo-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo{
+    width: 70px;
+    height: auto;
+}
 .header-top p {
     font-family: var(--logo-text-font);
-    font-size: 25px;
+    font-size: 20px;
     letter-spacing: 2px;
     color: white;
     border-radius: 5px;
+    padding-top: 5px;
 }
 
-.header-top p span {
-    font-size: 20px;
-}
 
 .header-top ul {
     display: flex;
     margin-left:  500px;;
+    font-size: 20px;
 }
 
 .header-top ul li {
@@ -96,7 +105,7 @@ header {
     width: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--main-color);
+    background-color: white;
     border-radius: 5px;
     transition: width 0.5s ease;
 }
@@ -149,6 +158,12 @@ header {
     color: white;
     font-family: var(--main-text-font);
 }
+#user-name{
+    color: white;
+    font-family: var(--logo-text-font);
+    display: none;
+    padding-top: 5px;
+}
 
 .header-text a.button {
     display: inline-block; 
@@ -163,12 +178,30 @@ header {
     text-align: center; 
     text-decoration: none; 
     transition: background-color 0.5s ease; 
+    padding-top: 5px;
 }
 
 .header-text a.button:hover {
     background-color: var(--main-color); /* Màu nền khi hover */
 }
-
+#logout-btn{
+    display: none;
+    width: 150px; 
+    height: 40px; 
+    margin-top: 20px; 
+    background-color: transparent; 
+    border: 2px solid var(--main-color); 
+    color: white;
+    cursor: pointer; 
+    font-size: 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    transition: background-color 0.5s ease; 
+    padding-top: 5px;
+}
+.header-text a#logout-btn:hover {
+    background-color: var(--main-color); /* Màu nền khi hover */
+}
 /* ---------mobi--------- */
 @media (max-width: 575px) {
     .header-top ul {
@@ -185,8 +218,9 @@ header {
     }
 
      .header-top ul li {
-        margin-bottom: 20px;
+        /* margin-bottom: 20px; */
         margin-left: 50px;
+        margin-bottom:50px ;
     }
  
     .header-top > i{
@@ -382,7 +416,7 @@ header {
 }
 /* ------------------contact--------------- */
 .contact{
-    background-image: url(/laptrinh/du_an_rieng/anh/lienhe.jpg);
+    background-image: url(./anh/lienhe.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
