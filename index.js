@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Kiểm tra thông tin đăng nhập
         if (user && email === user.email && password === user.password) {
             alert('Đăng nhập thành công! Đang chuyển hướng...');
-            window.location.href = './wed.html'; // Chuyển hướng đến trang chính
+            window.location.href = './index.html'; // Chuyển hướng đến trang chính
         } else {
             alert('Email hoặc mật khẩu không đúng. Vui lòng thử lại.');
         }
