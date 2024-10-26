@@ -206,6 +206,26 @@ header {
 }
 /* ---------mobi--------- */
 @media (max-width: 575px) {
+    .header-top {
+        padding: 0 12px;
+        position: relative;
+        width: 100%; /* Đặt độ rộng của header là 100% */
+        box-sizing: border-box; 
+    }
+
+    .header-top .logo {
+        float: left; /* Đặt logo ở bên trái */
+        margin: 0; /* Xóa margin để logo sát phía bên trái */
+        padding: 0; /* Xóa padding nếu có để không gian được tối ưu */
+    }
+
+    .header-top i.fa-bars {
+        font-size: 24px;
+        cursor: pointer;
+        float: right; /* Đặt icon menu ở bên phải */
+        display: block; /* Đảm bảo icon menu hiển thị */
+    }
+
     .header-top ul {
         position: fixed;
         width: 200px;
@@ -216,37 +236,35 @@ header {
         flex-direction: column;
         transform: translateX(100%);
         opacity: 0;
-        transition: transform 0.5s ease;  
+        transition: transform 0.5s ease;
     }
 
-     .header-top ul li {
-        /* margin-bottom: 20px; */
+    .header-top ul li {
         margin-left: 50px;
-        margin-bottom:50px ;
-    }
- 
-    .header-top > i{
-        display: block;
-        margin-left: 300px;
-    }
-    .header-top ul > i {
-        display: block;
+        margin-bottom: 50px;
     }
 
-    .header-top {
-        padding: 0 12px;
-    } 
+    .header-top ul i.fa-xmark {
+        font-size: 24px;
+        cursor: pointer;
+        display: block;
+        margin: 20px auto 0; /* Canh giữa icon đóng */
+    }
 
-    
-    /* .header-top ul.active {
-        transform: translateX(0);
-        opacity: 1;
-    } */
-    .brand-item,.course-item,.Evaluate-item,.facilities-item{
+    /* Đặt lại các thuộc tính float cho các mục để tránh tràn */
+    .header-top::after {
+        content: "";
+        display: table;
+        clear: both; /* Đảm bảo các phần tử floated không ảnh hưởng đến chiều cao của container */
+    }
+
+    /* Điều chỉnh kích thước và căn chỉnh các mục */
+    .brand-item, .course-item, .Evaluate-item, .facilities-item {
         width: 100%!important;
         margin-bottom: 20px;
     }
 }
+
 /* -------------course---------------- */
 .course{
     padding: 50px 0 ;
